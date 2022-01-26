@@ -2,7 +2,7 @@ const express = require('express')
 const { MongoClient } = require('mongodb');
 const cors = require('cors')
 const app = express()
-const port = 5000
+const port =process.env.PORT || 5000;
 require('dotenv').config();
 const ObjectId=require('mongodb').ObjectId;
 
@@ -63,5 +63,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Running Genius Car Server on Port ${port}`)
 })
